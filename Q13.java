@@ -19,8 +19,13 @@ public class Q13 {
         callException cl = new callException();
         try{
             cl.throwException(2);
-        }catch (MyCustomException e){
-            System.out.println("exception handled" + e);
+        }catch (MyCustomException ec){
+            System.out.println("exception handled" + ec);
+            Exception e = new Exception();
+            StackTraceElement[] cleanedUpStackTrace = new StackTraceElement[e.getStackTrace().length -1];
+            System.arraycopy(e.getStackTrace(), 1, cleanedUpStackTrace, 0, cleanedUpStackTrace.length);
+            e.setStackTrace(cleanedUpStackTrace);
+            e.printStackTrace();
         }
     }
 }
