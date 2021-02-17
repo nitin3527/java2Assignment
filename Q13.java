@@ -21,11 +21,11 @@ public class Q13 {
             cl.throwException(2);
         }catch (MyCustomException ec){
             System.out.println("exception handled" + ec);
-            Exception e = new Exception();
-            StackTraceElement[] cleanedUpStackTrace = new StackTraceElement[e.getStackTrace().length -1];
-            System.arraycopy(e.getStackTrace(), 1, cleanedUpStackTrace, 0, cleanedUpStackTrace.length);
-            e.setStackTrace(cleanedUpStackTrace);
-            e.printStackTrace();
+            ec.printStackTrace();
+            StackTraceElement[] cleanedUpStackTrace = new StackTraceElement[ec.getStackTrace().length -1];
+            System.arraycopy(ec.getStackTrace(), ec.getStackTrace().length-1, cleanedUpStackTrace, 0, cleanedUpStackTrace.length);
+            ec.setStackTrace(cleanedUpStackTrace);
+            ec.printStackTrace();
         }
     }
 }
