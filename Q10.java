@@ -1,19 +1,12 @@
 class CoffeShop {
-    public void pay(){};
-    public void orderToken(){};
-    public void orderServed(){};
-
-    public void collectPayment(){};
-    public void placeOrder(){};
-    public void generatePaymentToken(){};
-
-    public void getNextOrder(){};
-    public void prepareCoffee(){};
-    public void orderCompleted(){};
-    public void generateOrderToken(){};
+    public void menu(){};
+    public void coffeShopAddress(){};
+    public void upcomingOffers(){};
 
 }
 class Customer extends CoffeShop{
+    int cid;
+    String name;
     public Customer(){
         System.out.println("customer created");
     }
@@ -22,6 +15,8 @@ class Customer extends CoffeShop{
     public void orderServed(){};
 }
 class Cashier extends CoffeShop{
+    int cid;
+    String name;
     public Cashier(){
         System.out.println("Cashier created");
     }
@@ -30,6 +25,8 @@ class Cashier extends CoffeShop{
     public void generatePaymentToken(){};
 }
 class Barista extends CoffeShop{
+    int cid;
+    String name;
     public Barista(){
         System.out.println("Barista created");
     }
